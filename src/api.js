@@ -1,6 +1,7 @@
 import axios from 'axios';
+import * as config from 'config';
 
-const baseURL = 'http://localhost:8080/blocks';
+const baseURL = `${config.apiUrl}/blocks`;
 
 const getAllBlocks = async () => {
     const response = await axios.get(`${baseURL}`);
