@@ -1,5 +1,6 @@
 import * as React from "react";
 import { connect } from 'react-redux';
+import Button from 'react-bootstrap/Button';
 import { addTodo } from '../actions';
 
 interface Todo {
@@ -46,7 +47,7 @@ class TodoList extends React.Component<TodoProps, TodoState> {
         <h3 className="heading">Todo list:</h3>
         <div>Title: <input value = {title} onChange={this.onChangeTitle} /></div>
         <div>UserId: <input value = {userId} onChange={this.onChangeUserId} /></div>
-        <button onClick={this.addTodo} disabled={loading || !title}>Add</button>
+        <Button onClick={this.addTodo} disabled={loading || !title}>Add</Button>
         {loading && <div>Loading...</div>}
         {todos.map((todo: Todo) => (
           <div key={todo.userId}>
